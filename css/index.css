@@ -16,7 +16,9 @@ body {
 
 .header__inner,
 .trending-recipes,
-.recipes {
+.recipes,
+.recipe,
+.hero-submenu ul {
     max-width: 1320px;
     margin: 0 auto;
     width: 90%;
@@ -161,12 +163,12 @@ hgroup:has(.fancy-text) h2 {
     margin: 24px auto;
 }
 
-.hero hgroup p{
+.hero hgroup p {
     font-size: 20px;
     font-family: "Nunito Sans", sans-serif;
 }
 
-hero::after{
+hero::after {
     content: '';
     position: absolute;
     top: 0;
@@ -177,7 +179,7 @@ hero::after{
 
 }
 
-.recipe-card{
+.recipe-card {
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -187,7 +189,7 @@ hero::after{
     overflow: hidden;
 }
 
-.recipes-grid{
+.recipes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
@@ -195,32 +197,32 @@ hero::after{
     padding-left: 0;
 }
 
-.recipe-card svg{
+.recipe-card svg {
     width: 24px;
 }
 
-.recipe-card .recipe-card__image{
+.recipe-card .recipe-card__image {
     aspect-ratio: 16/9;
 }
 
-.recipe-card .recipe-card__image img{
+.recipe-card .recipe-card__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.recipe-card .recipe-card__text{
-    padding:  24px 16px;
+.recipe-card .recipe-card__text {
+    padding: 24px 16px;
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-c > *{
+c>* {
     margin: 0;
 }
 
-.recipe-card .recipe-card__text .recipe-category{
+.recipe-card .recipe-card__text .recipe-category {
     display: inline-block;
     background: #ed7e4a;
     padding: 4px 8px;
@@ -236,15 +238,15 @@ c > *{
     color: #a9a9a9;
 }
 
-.recipe-card__meta{
-    border-top:  1px solid #f4f4f4;
+.recipe-card__meta {
+    border-top: 1px solid #f4f4f4;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
 }
 
-.star-rating{
+.star-rating {
     display: flex;
     gap: 4px;
     list-style: none;
@@ -252,44 +254,272 @@ c > *{
     color: #528f6b;
 }
 
-.star-rating .active-star svg{
+.star-rating .active-star svg {
     fill: #528f6b;
 }
 
-.prep-time{
+.prep-time {
     display: flex;
     align-items: center;
     gap: 4px;
     font-size: 14px;
 }
 
-.prep-time span:first-of-type{
+.prep-time span:first-of-type {
     font-weight: 700;
 }
 
-.prep-time span:last-of-type{
+.prep-time span:last-of-type {
     color: #a9a9a9;
 }
 
-footer{
+footer {
     text-align: center;
     padding: 24px;
-    background-color: #ed7e4a;  
+    background-color: #ed7e4a;
     color: #fff;
+}
+
+.header--white {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.header--white nav a,
+.header--white button {
+    color: currentColor;
+}
+
+.btn-solid {
+    background-color: #ed7e4a;
+    color: #fff;
+}
+
+.recipe-details {
+    position: relative;
+    top: -110px;
+}
+
+.hero-submenu {
+    min-height: 650px;
+    display: flex;
+    align-items: flex-end;
+    background-position: bottom center;
+}
+
+.hero-submenu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.hero-submenu ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding-left: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-submenu ul button {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.hero-submenu ul button:hover {
+    background-color: #f4f4f4;
+}
+
+.hero-submenu ul button svg {
+    width: 24px;
+    height: 24px;
+    color: #ed7e4a;
+}
+
+.hero-submenu ul button:hover svg {
+    fill: #ed7e4a;
+}
+
+.star-rating svg {
+    width: 24px;
+    height: 24px;
+}
+
+.reviews {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recipe {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+}
+
+.recipe .istruzioni  {
+    order: 2;
+}
+
+.recipe .istruzioni h1 {
+    font-size: 36px;
+    margin: 24px 0;
+    font-family: "Bodoni Moda", serif;
+}
+
+.recipe .informazioni {
+    display: flex;
+    max-width: 100%;
+    align-self: start;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: #fff;
+}
+
+.recipe .informazioni img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    background-color: #f4f4f4;
+    padding: 8px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.recipe .informazioni .informazioni__header {
+    height: 100px;
+    background-color: #528f6b;
+    border-radius: 20px 20px 0 0;
+}
+
+.recipe .informazioni .informazioni__content {
+    margin-top: 50px;
+    padding: 24px;
+}
+
+.recipe .informazioni .informazioni__content ul {
+    margin: 0;
+    padding-left: 8px;
+}
+
+.recipe .informazioni .informazioni__content ul li {
+    margin-bottom: 8px;
+}
+
+.recipe .informazioni .informazioni__content ul li::marker {
+    content: url('../img/bullet.svg');
+}
+
+.recipe .informazioni .informazioni__content ul li span:first-of-type {
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.ingredienti {
+    padding: 48px;
+    border-radius: 24px;
+    background: #f4f4f4;
+    margin: 48px 0;
+}
+
+.ingredienti h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.ingredienti ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.ingredienti ul li {
+    margin-bottom: 16px;
+}
+
+.steps ol {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.steps ol li {
+    display: inline-flex;
+    gap: 16px;
+    counter-increment: listCounter;
+    margin-bottom: 24px;
+    position: relative;
+    align-items: center;
+}
+
+.steps ol li::before {
+    content: counter(listCounter);
+    color: #ed7e4a;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #ed7e4a;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
 }
 
 @media (min-width: 1024px) {
 
     .header__inner nav,
     .header__inner .header-cta {
-        display: block; 
+        display: block;
     }
 
     .menu-toggle {
         display: none;
     }
+
     .hero hgroup {
         width: 50%;
     }
 
+    .recipe {
+        grid-template-columns: 1fr 33%;
+    }
+
+    .steps ol li {
+
+        left: -65px;
+    }
+
+    .ingredienti ul {
+        column-count: 2;
+    }
+
+    .recipe .informazioni {
+        position: relative;
+        top: -100px;
+    }
+
+    .recipe .istruzioni{
+        order: initial;
+    }
+ 
 }
